@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <table style="border: 10px;">
+            <tr >
+                First Name:<input type="text" placeholder="Naman" id="fname" "><br>
+                Last Name:<input type="text" placeholder="Gupta" id="lname" id="fname"><br>
+                Gmail:<input type="text" placeholder="abc@gmail.com" id="gmail" ><br>
+                Phone No.:<input type="text" placeholder="9719*****2" id="phone" ><br>
+                
+                <button id="entry" >Add</button>
+                
+            </tr>
+        </table>
+        <table style="border: 10px solid black; padding: 10px;border-spacing: 10px;" id="display">
+           <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th> Gmail</th>
+                <th> Phone No.</th>
+            
+            </tr>
+            
+        </table>
+        <script type="text/javascript">
+            var entry=document.getElementById("entry");
+            entry.addEventListener("click",displaydetails);
+            var row=1;
+            function displaydetails()
+            {
+               var fname=document.getElementById("fname").value;
+               var lname=document.getElementById("lname").value;
+               var gmail=document.getElementById("gmail").value;
+               var phone=document.getElementById("phone").value;
+               if(!fname|| !lname || !gmail || !phone)
+                   {
+                       alert("Insert Details");
+                       return;
+                   }
+
+                 var display=document.getElementById("display");
+                 var newRow=display.insertRow(row);
+
+                 var cell1=newRow.insertCell(0);
+                 var cell2=newRow.insertCell(1);
+                 var cell3=newRow.insertCell(2);
+                 var cell4=newRow.insertCell(3);
+
+                 cell1.innerHTML=fname;
+                 cell2.innerHTML=lname;
+                 cell3.innerHTML=gmail;
+                 cell4.innerHTML=phone;
+            }
+        </script>
+    </body>
+</html>
